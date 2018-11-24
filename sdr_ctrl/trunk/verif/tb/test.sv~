@@ -1,0 +1,9 @@
+module test;
+class environment;
+endclass
+class driver;
+endclass
+class scoreboard;
+endclass
+class monitor;
+endclass

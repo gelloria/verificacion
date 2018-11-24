@@ -1,0 +1,62 @@
+{
+    "vcs_paramclassrepository": [
+        "vcs_paramclassrepository",
+        "hEeZs",
+        "module",
+        8
+    ],
+    "_vcs_unit__495879774": [
+        "_vcs_unit__495879774",
+        "FgzeH",
+        "module",
+        11
+    ],
+    "sdrc_top": [
+        "sdrc_top",
+        "NTNU2",
+        "module",
+        2
+    ],
+    "std": [
+        "std",
+        "reYIK",
+        "module",
+        5
+    ],
+    "sdrc_bank_fsm": [
+        "sdrc_bank_fsm",
+        "ChjVu",
+        "module",
+        1
+    ],
+    "mt48lc2m32b2": [
+        "mt48lc2m32b2",
+        "a3mSN",
+        "module",
+        10
+    ],
+    "IS42VM16400K": [
+        "IS42VM16400K",
+        "TzJKa",
+        "module",
+        3
+    ],
+    "bus_interface": [
+        "bus_interface",
+        "Bzz2T",
+        "module",
+        7
+    ],
+    "tb_top": [
+        "tb_top",
+        "jdPWL",
+        "module",
+        9
+    ],
+    "...MASTER...": [
+        "SIM",
+        "amcQw",
+        "module",
+        4
+    ]
+}

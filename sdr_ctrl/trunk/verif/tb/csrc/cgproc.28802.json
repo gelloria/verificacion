@@ -1,0 +1,96 @@
+{
+    "Modules": {
+        "IS42VM16400K": {
+            "Compiled": "Yes",
+            "Compiled Times": 73
+        },
+        "...MASTER...": {},
+        "vcs_paramclassrepository": {
+            "Compiled": "Yes",
+            "Compiled Times": 50
+        },
+        "_vcs_unit__495879774": {
+            "Compiled": "Yes",
+            "Compiled Times": 60
+        },
+        "sdrc_top": {
+            "Compiled": "Yes",
+            "Compiled Times": 44
+        },
+        "std": {
+            "Compiled": "Yes",
+            "Compiled Times": 77
+        },
+        "sdrc_bank_fsm": {
+            "Compiled": "Yes",
+            "Compiled Times": 78
+        },
+        "mt48lc2m32b2": {
+            "Compiled": "Yes",
+            "Compiled Times": 73
+        },
+        "bus_interface": {
+            "Compiled": "Yes",
+            "Compiled Times": 63
+        },
+        "tb_top": {
+            "Compiled": "Yes",
+            "Compiled Times": 68
+        }
+    },
+    "ObjArchives": [
+        {
+            "archive": "archive.77/_28802_archive_1.a",
+            "objects": [
+                [
+                    "hEeZs_d.o",
+                    53378
+                ],
+                [
+                    "amcQwB.o",
+                    159587
+                ]
+            ],
+            "size": 212965
+        }
+    ],
+    "CompUnits": {
+        "hEeZs_d": {
+            "mod": "vcs_paramclassrepository",
+            "checksum": 0,
+            "mode": 4,
+            "out": "hEeZs_d.o",
+            "bytes": 53378,
+            "archive": "archive.77/_28802_archive_1.a"
+        }
+    },
+    "reusePaths": {
+        "amcQw_d": {
+            "icPath": "csrc"
+        },
+        "a3mSN_d": {
+            "icPath": "csrc"
+        },
+        "ChjVu_d": {
+            "icPath": "csrc"
+        },
+        "FgzeH_d": {
+            "icPath": "csrc"
+        },
+        "NTNU2_d": {
+            "icPath": "csrc"
+        },
+        "reYIK_d": {
+            "icPath": "csrc"
+        },
+        "TzJKa_d": {
+            "icPath": "csrc"
+        },
+        "Bzz2T_d": {
+            "icPath": "csrc"
+        },
+        "jdPWL_d": {
+            "icPath": "csrc"
+        }
+    }
+}

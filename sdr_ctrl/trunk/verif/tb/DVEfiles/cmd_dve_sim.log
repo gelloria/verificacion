@@ -1,0 +1,58 @@
+set ucliGUI::state
+set ucliGUI::state
+ucliCore::getToolPID
+synopsys::env hasTB
+trigger_hier_stack_context_switch 0
+synopsys::xml set_array_limit <data limit="50" />
+synopsys::xml set_depth_limit <data limit="100" />
+synopsys::xml set_string_limit <data limit="1000" />
+synopsys::xml set_only_active_frame <data value="1" />
+synopsys::xml set_variable_frame_id <data value="1" />
+synUtils::setDVEInitPhase 1
+synopsys::dump -type VPD -file /mnt/vol_NFS_Zener/WD_ESPEC/vmorales/Verificacion_proyecto1/sdr_ctrl/trunk/verif/tb/inter.vpd -locking
+synopsys::dump -autoflush on -fid VPD0
+set ::dve_fid VPD0
+synUtils::setDVEInitPhase 0
+ucliCore::getToolPID
+synUtils::sendTool -active _icl_setToolSocket /tmp/smlnpzkCnGg
+synUtils::sendTool -active {_icl_start_rpc -version "M-2017.03_Full64" -sync_file /tmp/vcs_dve_rpc.vmorales.14809}
+synUtils::sendTool -active {_icl_createSharedMemory /tmp/vcs_dve_general.vmorales.14809}
+config endofsim noexit
+config onfail enable all
+config syscaddplainmembers
+config syscaddsourcenames
+config syscaddstructtypes
+synopsys::listing -disable
+synopsys::dump -add {tb_top} -scope "." -depth 1 -fid VPD0
+synopsys::run
+set ucliGUI::state
+set ucliGUI::state
+set synopsys::env(time) 9264750000
+set synopsys::env(time) 16906935000
+set synopsys::env(time) 24451552000
+set synopsys::env(time) 31837065000
+set synopsys::env(time) 39251595000
+set synopsys::env(time) 47192180000
+set synopsys::env(time) 55002495000
+set synopsys::env(time) 61703155000
+set synopsys::env(time) 70213550000
+set synopsys::env(time) 78128112000
+set synopsys::env(time) 85358365000
+set synopsys::env(time) 93306880000
+set synopsys::env(time) 101403362000
+set synopsys::env(time) 110305530000
+set synopsys::env(time) 120059985000
+set synopsys::env(time) 128099910000
+set synopsys::env(time) 132581520000
+ucliCore::getToolPID
+ucliCore::stopTool -no_signal
+set ucliGUI::state
+set ucliGUI::state
+synopsys::xml get_stop_data
+synopsys::xml {frames <data updateType="preserve" itemId="none" viewId="Stack.1" />}
+synopsys::xml {locals <data updateType="preserve" itemId="none" frame_id="frame(13:0:3)" viewId="Local.1" />}
+if [catch {gui_sim_terminate}] {gui_sim_terminate -kill}
+synopsys::finish
+set ucliGUI::state
+set ucliGUI::state
+ucli_exit

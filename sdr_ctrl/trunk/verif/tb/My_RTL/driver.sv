@@ -1,5 +1,5 @@
 
-`include "stimuli_1.sv"
+`include "My_RTL/stimuli_1.sv"
 
 //---------------------------------
 // Classes Definition
@@ -9,19 +9,19 @@
 class driver;
 
 	logic  [31:0] 	Address;
-	logic  [7:0]    bl;
+	logic  [7:0]    burst_length;
 
 	// scoreboard
 	scoreboard            system_scoreboard;
 	// interface
 	virtual bus_interface system_bus_interface;
 	// stimuli
-	stimuli1 		          st1_drv	;
+	stimuli_1 		        st1_drv	;
 
 	function new(
 		virtual bus_interface system_bus_interface,
 		scoreboard system_scoreboard,
-		stimuli1 st1_ext
+		stimuli_1 st1_ext
 		);
 
 		this.system_bus_interface =system_bus_interface;
@@ -31,7 +31,7 @@ class driver;
 	endfunction
 
 	//---------------------------------
-	// Stimulus task to generate the Address and bl, then it call the busrt_write task
+	// Stimulus task to generate the Address and burst_length, then it call the busrt_write task
 	//--------------------------------
 	/* stimuli 1*/
 	task write_randaddr();
@@ -39,10 +39,10 @@ class driver;
 
 			void'(st1_drv.randomize());
 			st1_drv.random_rowbank();
-			Address = st1_drv.Address;
-			bl = st1_drv.bl;
+			Address = st1_drv.address;
+			burst_length = st1_drv.burst_length;
 
-			this.burst_write(Address,bl);
+			this.burst_write(Address,burst_length);
 		end
 	endtask //random row and bank
 
@@ -69,16 +69,16 @@ class driver;
 
 	task burst_write();
 		input [31:0] Address;
-		input [7:0]  bl;
+		input [7:0]  burst_length;
 		int i;
 		begin
 		  this.system_scoreboard.push_address(Address);
-		  this.system_scoreboard.push_burst(bl);
+		  this.system_scoreboard.push_burst(burst_length);
 
 		   @ (negedge this.system_bus_interface.sys_clk);
-		   $display("Write Address: %x, Burst Size: %d",Address,bl);
+		   $display("Write Address: %x, Burst Size: %d",Address,burst_length);
 
-		   for(i=0; i < bl; i++) begin
+		   for(i=0; i < burst_length; i++) begin
 		      this.system_bus_interface.wb_stb_i        = 1;
 		      this.system_bus_interface.wb_cyc_i        = 1;
 		      this.system_bus_interface.wb_we_i         = 1;

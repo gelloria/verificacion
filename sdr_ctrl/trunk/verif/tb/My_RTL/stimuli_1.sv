@@ -1,6 +1,6 @@
 class stimuli_1;
 	//  Address: <12 Bit Row> <2 Bit Bank> <8 Bit Column> <2'b00>
-	logic [31:0] Address;
+	logic [31:0] address;
 
   // Variables to be randomize
 	rand logic [11:0] row;

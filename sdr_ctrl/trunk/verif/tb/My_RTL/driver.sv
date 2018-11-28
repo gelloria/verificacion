@@ -1,5 +1,5 @@
 
-`include "stimuli1.sv"
+`include "stimuli_1.sv"
 
 //---------------------------------
 // Classes Definition
@@ -10,9 +10,12 @@ class driver;
 
 	logic  [31:0] 	Address;
 	logic  [7:0]    bl;
-	virtual bus_interface system_bus_interface;
-	scoreboard            system_scoreboard;
 
+	// scoreboard
+	scoreboard            system_scoreboard;
+	// interface
+	virtual bus_interface system_bus_interface;
+	// stimuli
 	stimuli1 		          st1_drv	;
 
 	function new(
